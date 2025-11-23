@@ -1,0 +1,20 @@
+# Kubernetes
+**/*.tmp
+**/*.bak
+
+# Local development
+.vscode/
+.idea/
+*.swp
+*.swo
+node_modules/
+
+# Sensitive data
+**/secrets.yaml
+**/*.env
+*.key
+*.pem
+
+# Database
+database/backups/
+*.sqlite

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+  labels:
+    app: multi-tier-app
+    tier: database
+spec:
+  type: ClusterIP
+  selector:
+    app: multi-tier-app
+    tier: database
+  ports:
+  - name: mysql
+    port: 3306
+    targetPort: 3306
