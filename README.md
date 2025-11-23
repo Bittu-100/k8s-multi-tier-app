@@ -1,11 +1,8 @@
 Multi-Tier Kubernetes Application
-
 🚀 Project Overview
-	
-	A complete 3-tier web application deployed on Kubernetes, featuring a Todo application with persistent data storage. This project demonstrates real-world microservices architecture, service communication, and production-ready Kubernetes deployment practices.
-
+A complete 3-tier web application deployed on Kubernetes, featuring a Todo application with persistent data storage. This project demonstrates real-world microservices architecture, service communication, and production-ready Kubernetes deployment practices.
 🏗️ Architecture
-
+text
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
 │   Frontend      │    │   Backend API    │    │   Database      │
 │   (nginx)       │◄───│   (Node.js)      │◄───│   (MySQL)       │
@@ -18,17 +15,12 @@ Multi-Tier Kubernetes Application
 │   Service       │    │   Service        │    │   Service       │
 │   NodePort:30080│    │   ClusterIP:3000 │    │   ClusterIP:3306│
 └─────────────────┘    └──────────────────┘    └─────────────────┘
-
 Components:
-
-	Frontend: nginx serving static web interface with JavaScript
-
-	Backend: Node.js Express API handling business logic
-
-	Database: MySQL with persistent storage for data persistence
-
+•	Frontend: nginx serving static web interface with JavaScript
+•	Backend: Node.js Express API handling business logic
+•	Database: MySQL with persistent storage for data persistence
 📁 Project Structure
-
+text
 k8s-multi-tier-app/
 ├── k8s/                    # Kubernetes manifests
 │   ├── database/          # MySQL deployment, service, PVC, secrets
@@ -55,44 +47,26 @@ k8s-multi-tier-app/
 │   └── architecture.md    # Detailed architecture
 ├── README.md              # This file
 └── .gitignore            # Git ignore rules
-
-
 🛠️ Technologies Used
-Kubernetes: Container orchestration
-
-Docker: Containerization
-
-Node.js: Backend runtime
-
-Express.js: Web framework
-
-MySQL: Database management
-
-nginx: Web server & reverse proxy
-
-Git: Version control
-
-
-
-
+•	Kubernetes: Container orchestration
+•	Docker: Containerization
+•	Node.js: Backend runtime
+•	Express.js: Web framework
+•	MySQL: Database management
+•	nginx: Web server & reverse proxy
+•	Git: Version control
 🚀 Quick Start
 Prerequisites
-Kubernetes cluster (Minikube recommended)
-
-kubectl configured
-
-Docker
-
-
-
+•	Kubernetes cluster (Minikube recommended)
+•	kubectl configured
+•	Docker
 Deployment Steps
 1.	Clone and setup:
-
+bash
 git clone https://github.com/YOUR_USERNAME/k8s-multi-tier-app.git
 cd k8s-multi-tier-app
-
 2.	Build Docker images:
-
+bash
 # Switch to Minikube's Docker environment
 eval $(minikube docker-env)
 
@@ -102,6 +76,7 @@ docker build -t multi-tier-backend:1.0.0 src/backend/
 # Build frontend image
 docker build -t multi-tier-frontend:1.0.0 src/frontend/
 3.	Deploy to Kubernetes:
+bash
 # Run the complete deployment script
 ./scripts/deploy-final.sh
 
@@ -110,6 +85,7 @@ kubectl apply -f k8s/database/
 kubectl apply -f k8s/backend/
 kubectl apply -f k8s/frontend/
 4.	Access the application:
+bash
 # Access web interface
 kubectl port-forward service/frontend-service 8080:80
 # Visit: http://localhost:8080
